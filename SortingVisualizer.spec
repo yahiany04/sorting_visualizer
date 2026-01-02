@@ -1,21 +1,18 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_submodules
-
-hiddenimports = []
-hiddenimports += collect_submodules('visualizer')
-hiddenimports += collect_submodules('bubble_sort')
-hiddenimports += collect_submodules('selection_sort')
-hiddenimports += collect_submodules('insertion_sort')
-hiddenimports += collect_submodules('merge_sort')
-hiddenimports += collect_submodules('quick_sort')
-
 
 a = Analysis(
     ['main.py'],
-    pathex=['c:\\Users\\Computec\\Downloads\\algorithem (1)\\algorithem'],
+    pathex=['c:\\Users\\Computec\\Downloads\\algos\\algorithem'],
     binaries=[],
-    datas=[],
-    hiddenimports=hiddenimports,
+    datas=[
+        ('visualizer.py', '.'),
+        ('bubble_sort.py', '.'),
+        ('selection_sort.py', '.'),
+        ('insertion_sort.py', '.'),
+        ('merge_sort.py', '.'),
+        ('quick_sort.py', '.'),
+    ],
+    hiddenimports=['visualizer', 'bubble_sort', 'selection_sort', 'insertion_sort', 'merge_sort', 'quick_sort'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
